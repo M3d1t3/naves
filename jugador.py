@@ -8,8 +8,8 @@ class Jugador:
         # Posición inicial del jugador
         self.x = 100
         self.y = 600
-        self.ancho = 99
-        self.alto = 75
+        self.ancho = self.image.get_width()
+        self.alto = self.image.get_height()
 
         # Velocidad inicial del jugador
         self.speed = 5

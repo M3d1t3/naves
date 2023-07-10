@@ -1,16 +1,19 @@
 import pygame
+import random
+
+imgEnemNegro = [pygame.image.load('imagenes/enemigoNegro.png'),pygame.image.load('imagenes/enemigoNegro1.png'),pygame.image.load('imagenes/enemigoNegro2.png')]
 
 
 class EnemigoNegro:
     def __init__(self,posX,posY):
-        #Cargar la imagen del enemigo negro
-        self.image = pygame.image.load('imagenes/enemigoNegro.png')
+        #Cargar la imagen del enemigo negro aleatoriamente
+        self.image = imgEnemNegro[random.randint(0,2)]
 
         #posicion y medidas
         self.x = posX
         self.y = posY
-        self.ancho = 93
-        self.alto = 84
+        self.ancho = self.image.get_width()
+        self.alto = self.image.get_height()
 
         #velocidad del enemigo
         self.velocidad = 2
