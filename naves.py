@@ -1,11 +1,15 @@
 import pygame
 import sys
 
+from fondo import Fondo
 from jugador import Jugador
 from enemigoNegro import EnemigoNegro
 from enemigoAzul import EnemigoAzul
 from enemigoVerde import EnemigoVerde
 from enemigoRojo import EnemigoRojo
+
+#Crear el fondo
+fondo = Fondo()
 
 #Creamos el jugador
 jugador = Jugador()
@@ -44,6 +48,7 @@ while True:
     screen.fill((0, 0, 0))
 
     # Aquí iría el código de dibujo (dibujar las naves, los disparos, etc.)
+    fondo.dibujar(screen)
     jugador.dibujar(screen)
     enemigo.dibujar(screen)
     enemigo2.dibujar(screen)
