@@ -7,6 +7,7 @@ from enemigoNegro import EnemigoNegro
 from enemigoAzul import EnemigoAzul
 from enemigoVerde import EnemigoVerde
 from enemigoRojo import EnemigoRojo
+from disparoJugador import DisparoJugador
 
 #Crear el fondo
 fondo = Fondo()
@@ -17,6 +18,7 @@ jugador = Jugador()
 #crear un enemigo negro de prueba
 enemigo = EnemigoVerde(100,0)
 enemigo2 = EnemigoRojo(300,0)
+disparo = DisparoJugador(200,1000)
 
 # Inicializa Pygame
 pygame.init()
@@ -43,6 +45,8 @@ while True:
     jugador.actualizar()
     enemigo.actualizar()
     enemigo2.actualizar()
+    disparo.actualizar()
+
 
     # Limpia la pantalla (pinta todo de negro)
     screen.fill((0, 0, 0))
@@ -52,6 +56,7 @@ while True:
     jugador.dibujar(screen)
     enemigo.dibujar(screen)
     enemigo2.dibujar(screen)
+    disparo.dibujar(screen)
 
     # Actualiza la pantalla
     pygame.display.flip()
