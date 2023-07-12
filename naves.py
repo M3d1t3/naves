@@ -8,6 +8,8 @@ from enemigoAzul import EnemigoAzul
 from enemigoVerde import EnemigoVerde
 from enemigoRojo import EnemigoRojo
 from disparoJugador import DisparoJugador
+from disparoEnemigo import DisparoEnemigo
+from meteoritoP import MeteoritoP
 
 #Crear el fondo
 fondo = Fondo()
@@ -19,6 +21,8 @@ jugador = Jugador()
 enemigo = EnemigoVerde(100,0)
 enemigo2 = EnemigoRojo(300,0)
 disparo = DisparoJugador(200,1000)
+disparoEnemigo = DisparoEnemigo(400,-300)
+MeteoP = MeteoritoP(400,-100)
 
 # Inicializa Pygame
 pygame.init()
@@ -46,6 +50,8 @@ while True:
     enemigo.actualizar()
     enemigo2.actualizar()
     disparo.actualizar()
+    disparoEnemigo.actualizar()
+    MeteoP.actualizar()
 
 
     # Limpia la pantalla (pinta todo de negro)
@@ -57,6 +63,8 @@ while True:
     enemigo.dibujar(screen)
     enemigo2.dibujar(screen)
     disparo.dibujar(screen)
+    disparoEnemigo.dibujar(screen)
+    MeteoP.dibujar(screen)
 
     # Actualiza la pantalla
     pygame.display.flip()
