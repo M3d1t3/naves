@@ -21,3 +21,4 @@ class MeteoritoG:
     def actualizar(self):
         #Actualizar la posicion
         self.y += self.velocidadY
+ 
