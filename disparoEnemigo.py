@@ -1,5 +1,8 @@
 import pygame
 
+#lista de disparos de los enemigos
+disparosEnemigos = []
+
 class DisparoEnemigo:
     def __init__(self, posX, posY):
         #Cargar la imagen del disparo del enemigo

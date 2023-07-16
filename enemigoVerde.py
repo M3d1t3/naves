@@ -1,5 +1,6 @@
 import pygame
 import random
+from disparoEnemigo import DisparoEnemigo, disparosEnemigos
 
 imgEnemVerde = [pygame.image.load('imagenes/enemigoVerde.png'),pygame.image.load('imagenes/enemigoVerde1.png'),pygame.image.load('imagenes/enemigoVerde2.png')]
 
@@ -18,11 +19,15 @@ class EnemigoVerde:
         self.alto = self.image.get_height()
 
         #velocidad del enemigo
-        self.velocidadY = 2
+        self.velocidadY = 1
 
         #Control del cambio de direccion
         self.contador = 0
         self.disparo = 70
+
+        #control de disparos
+        self.retardo = random.randint(60, 100)
+        self.contadorRetardo = 0
     
     def dibujar(self, screen):
         """Dibuja la imagen del enemigoAzul en su posición actual en la pantalla."""
@@ -35,4 +40,14 @@ class EnemigoVerde:
         #Realiza un disparo cada cierto tiempo
         if(self.contador > self.disparo):
             self.contador = 0
-        
+        #Comprobar y crear disparo
+        self.contadorRetardo += 1
+        if self.contadorRetardo > self.retardo:
+            self.crearDisparo()
+            self.contadorRetardo = 0
+    
+    #Crea un nuevo disparo en la lista disparosJugador
+    def crearDisparo(self):
+        self.disX = self.x + (self.ancho/2) - 7
+        self.disY = self.y + self.alto - 30
+        disparosEnemigos.append(DisparoEnemigo(self.disX,self.disY))
