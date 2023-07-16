@@ -1,5 +1,9 @@
 import pygame
 
+#Lista de disparos del jugador
+disparosJugador = []
+
+#Clase para los disparos del jugador
 class DisparoJugador:
     def __init__(self, posX, posY):
         #Cargar la imagen del disparo del jugador

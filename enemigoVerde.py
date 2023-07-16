@@ -3,6 +3,8 @@ import random
 
 imgEnemVerde = [pygame.image.load('imagenes/enemigoVerde.png'),pygame.image.load('imagenes/enemigoVerde1.png'),pygame.image.load('imagenes/enemigoVerde2.png')]
 
+#Enemigo verde, sin movimiento lateral pero con disparo
+enemigosVerdes = []
 
 class EnemigoVerde:
     def __init__(self,posX,posY):

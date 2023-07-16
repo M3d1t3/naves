@@ -3,6 +3,9 @@ import random
 
 imgEnemNegro = [pygame.image.load('imagenes/enemigoNegro.png'),pygame.image.load('imagenes/enemigoNegro1.png'),pygame.image.load('imagenes/enemigoNegro2.png')]
 
+#Enemigo básico sin movimiento lateral ni disparo
+enemigosNegros = []
+
 
 class EnemigoNegro:
     def __init__(self,posX,posY):
