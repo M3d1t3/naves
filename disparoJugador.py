@@ -8,7 +8,7 @@ class DisparoJugador:
     def __init__(self, posX, posY):
         #Cargar la imagen del disparo del jugador
         self.image = pygame.image.load('imagenes/disparoJugador.png')
-
+    
         #posicion y medidas
         self.x = posX
         self.y = posY
