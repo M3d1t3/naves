@@ -2,6 +2,7 @@ import pygame
 from disparoJugador import DisparoJugador, disparosJugador
 
 
+
 class Jugador:
     def __init__(self):
         # Carga la imagen del jugador
@@ -62,3 +63,7 @@ class Jugador:
         self.disX = self.x + (self.ancho/2) - 7
         self.disY = self.y - 20
         disparosJugador.append(DisparoJugador(self.disX,self.disY))
+
+
+
+jugador = Jugador()

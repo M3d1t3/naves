@@ -2,23 +2,13 @@ import pygame
 import sys
 
 from fondo import Fondo
-from jugador import Jugador
-from enemigoNegro import EnemigoNegro
-from enemigoAzul import EnemigoAzul
-from enemigoVerde import EnemigoVerde
-from enemigoRojo import EnemigoRojo
-from disparoJugador import DisparoJugador, disparosJugador
-from disparoEnemigo import DisparoEnemigo, disparosEnemigos
-from meteoritoP import MeteoritoP
-from meteoritoG import MeteoritoG
+from juego import Juego
 
 #Crear el fondo
 fondo = Fondo()
 
-#Creamos el jugador
-jugador = Jugador()
-
-enemigo = EnemigoVerde(300,0)
+#Crear el objeto juego
+juego = Juego()
 
 # Inicializa Pygame
 pygame.init()
@@ -42,24 +32,14 @@ while True:
             sys.exit()
 
     # Aquí iría el código de actualización del juego (movimiento de las naves, disparos, etc.)
-    jugador.actualizar()
-    for disparo in disparosJugador:
-        disparo.actualizar()
-    enemigo.actualizar()
-    for disparo in disparosEnemigos:
-        disparo.actualizar()
+    juego.actualizar()
 
     # Limpia la pantalla (pinta todo de negro)
     screen.fill((0, 0, 0))
 
     # Aquí iría el código de dibujo (dibujar las naves, los disparos, etc.)
     fondo.dibujar(screen)
-    jugador.dibujar(screen)
-    for disparo in disparosJugador:
-        disparo.dibujar(screen)
-    enemigo.dibujar(screen)
-    for disparo in disparosEnemigos:
-        disparo.dibujar(screen)
+    juego.dibujar(screen)
 
     # Actualiza la pantalla
     pygame.display.flip()

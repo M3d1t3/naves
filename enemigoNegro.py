@@ -19,7 +19,7 @@ class EnemigoNegro:
         self.alto = self.image.get_height()
 
         #velocidad del enemigo
-        self.velocidad = 2
+        self.velocidad = 1
     
     def dibujar(self, screen):
         """Dibuja la imagen del enemigoNegro en su posición actual en la pantalla."""
