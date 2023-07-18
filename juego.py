@@ -12,7 +12,7 @@ evento1 = [{"tiempo" : 30, "tipo" : "negro", "x" : 50, "y" : -50, "creado" : 0},
            {"tiempo" : 30, "tipo" : "negro", "x" : 500, "y" : -50, "creado" : 0},{"tiempo" : 30, "tipo" : "negro", "x" : 650, "y" : -50, "creado" : 0},{"tiempo" : 30, "tipo" : "negro", "x" : 800, "y" : -50, "creado" : 0},
            {"tiempo" : 300, "tipo" : "negro", "x" : 50, "y" : -50, "creado" : 0},{"tiempo" : 300, "tipo" : "negro", "x" : 200, "y" : -50, "creado" : 0},{"tiempo" : 300, "tipo" : "negro", "x" : 350, "y" : -50, "creado" : 0},
            {"tiempo" : 300, "tipo" : "negro", "x" : 500, "y" : -50, "creado" : 0},{"tiempo" : 300, "tipo" : "negro", "x" : 650, "y" : -50, "creado" : 0},{"tiempo" : 300, "tipo" : "negro", "x" : 800, "y" : -50, "creado" : 0}]
-tiempoEvento1 = 1500
+tiempoEvento1 = 800
 
 evento2 = [{"tiempo" : 30, "tipo" : "rojo", "x" : 50, "y" : -50, "creado" : 0},{"tiempo" : 30, "tipo" : "negro", "x" : 200, "y" : -50, "creado" : 0},{"tiempo" : 30, "tipo" : "negro", "x" : 350, "y" : -50, "creado" : 0},
            {"tiempo" : 30, "tipo" : "verde", "x" : 500, "y" : -50, "creado" : 0},{"tiempo" : 30, "tipo" : "negro", "x" : 650, "y" : -50, "creado" : 0},{"tiempo" : 30, "tipo" : "negro", "x" : 800, "y" : -50, "creado" : 0},
@@ -122,18 +122,22 @@ class Juego:
                 if self.colision(disparo,enemigo):
                     disparosJugador.remove(disparo)
                     enemigosNegros.remove(enemigo)
+                    return True
             for enemigo in enemigosAzules:
                 if self.colision(disparo,enemigo):
                     disparosJugador.remove(disparo)
                     enemigosAzules.remove(enemigo)
+                    return True
             for enemigo in enemigosVerdes:
                 if self.colision(disparo,enemigo):
                     disparosJugador.remove(disparo)
                     enemigosVerdes.remove(enemigo)
+                    return True
             for enemigo in enemigosRojos:
                 if self.colision(disparo,enemigo):
                     disparosJugador.remove(disparo)
                     enemigosRojos.remove(enemigo)
+                    return True
 
         # Comprobar colisiones entre disparos de los enemigos y el jugador
         for disparo in disparosEnemigos:
